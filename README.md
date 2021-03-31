@@ -3,50 +3,33 @@
 The empty structure contains necessary folder and files to start building site based on project [opendocks/o-dock](https://github.com/opendocks/o-dock).
 
 ### How to use for project
-- Clone this repository using command
+* Clone this repository using command based on [opendocks/o-template](https://github.com/opendocks/o-template)
 ```bash
-    git clone git@github.com:opendocks/o-template.git
+git clone git@github.com:larabeans/o-template.git
 ```
 
-- Clone [opendocks/o-dock](https://github.com/opendocks/o-dock) repository within root of this repo using command
+* Go to code directory using command
 ```bash
-    git clone git@github.com:opendocks/o-dock.git
+cd code
 ```
 
-- Update general .env variables
-   1. APP_BASE_DIR
-   2. COMPOSE_PROJECT_NAME
-   3. DOCKER_HOST_IP (IP of host machine)
-   4. PHP_IDE_CONFIG
-   5. PHP_VERSION (Use any value from 7.3, 7.2, 7.1, 7.0, 5.6)
+- Clone [larabeans/larabeans](https://github.com/larabeans/larabeans) project within `code` directory using command
+```bash
+git clone git@github.com:larabeans/larabeans.git
+```
 
-- Update .env variables for Apache Service
-   1. APACHE_VIRTUAL_HOST 
-   
-   If you are using [opendocks/o-proxy](https://github.com/opendocks/o-proxy), this will add reverse proxy automatically, though you have to manually add host entries in OS host file.
-   
-   If you need to add multiple host, provide comma separated values.
-   
-   For more details Check [opendocks/o-proxy](https://github.com/opendocks/o-proxy)
-      
-- Update .env variables for PHP Service
-   1. Enable or disable required PHP extentions for PHP service
-   2. Enable or disable required PHP extentions for Workspace service
+* Rename `larabeans` directory resulted from above command to `api` using below command
+```bash
+mv larabeans api
+```
 
-- Update .env for MySQL Service
-   1. MYSQL_VERSION
-   2. MYSQL_DATABASE
-   3. MYSQL_USER
-   4. MYSQL_PASSWORD
-   5. MYSQL_ROOT_PASSWORD  
+* Create directory `mysql` within data directory
 
-- Search and update <b>proj.name</b> to your project name, in o-dock directory, use same as value of <b>COMPOSE_PROJECT_NAME</b> 
+* Run host.bat file to add entries to windows host file
 
-- Copy your code in code folder within the root directory of repository
+* It is assumes you already setup proxy server, if not go to [opendocks/o-proxy](https://github.com/opendocks/o-proxy), and check setup process.
 
-- Create data directory in the root of this folder, it will server of MySQL data as docker volume
-
-
+* run `docker-compose up`, it will build images and will take time on first run 
 
 ### Useful Commands
 
