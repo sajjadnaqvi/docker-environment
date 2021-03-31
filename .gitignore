@@ -1,16 +1,3 @@
 .idea
-/code/*/node_modules
-/code/*/public/hot
-/code/*/public/storage
-/code/*/storage/*.key
-/code/*/vendor
-/code/*/.env
-/code/*/.phpunit.result.cache
-/code/*/Homestead.json
-/code/*/Homestead.yaml
-/code/*/npm-debug.log
-/code/*/yarn-error.log
-/code/*/apidoc-templates
-/code/*/public/api/*
 /code/api/*
 /data/mysql/*
