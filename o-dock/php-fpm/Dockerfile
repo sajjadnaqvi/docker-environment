@@ -7,6 +7,8 @@ ENV PHP_VERSION ${PHP_VERSION}
 # Set Environment Variables
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN apt clean
+RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get update
 
 #
@@ -423,7 +425,7 @@ USER root
 ARG INSTALL_IMAGE_OPTIMIZERS=false
 
 RUN if [ ${INSTALL_IMAGE_OPTIMIZERS} = true ]; then \
-    apt-get install -y jpegoptim optipng pngquant gifsicle \
+    apt-get install -yqq --fix-missing jpegoptim optipng pngquant gifsicle \
 ;fi
 
 ###########################################################################
@@ -435,7 +437,7 @@ USER root
 ARG INSTALL_IMAGEMAGICK=false
 
 RUN if [ ${INSTALL_IMAGEMAGICK} = true ]; then \
-    apt-get install -y libmagickwand-dev imagemagick --fix-missing && \
+    apt-get install -yqq libmagickwand-dev imagemagick --fix-missing && \
     pecl install imagick && \
     docker-php-ext-enable imagick \
 ;fi

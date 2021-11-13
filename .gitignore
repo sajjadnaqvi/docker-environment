@@ -1,4 +1,4 @@
 .idea
-/code/api/*
-/data/mysql/*
+/code/api
+/data/mysql
 containers
